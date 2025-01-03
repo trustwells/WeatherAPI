@@ -15,7 +15,6 @@ app.get("/", (req, res) => {
 app.get("/weather", async (req, res) => {
     const city = req.query.city;
     const state = req.query.state;
-    //res.render("weather.ejs", {city: city, state: state});
     
     try {
         const coordinates_result = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},US&limit=5&appid=xxxxxxxxxxxxxxx`);
